@@ -1,0 +1,100 @@
+1.
+console.log(hello);                                   
+var hello = 'world';  
+
+(It goes to the console.log and sees that the variable is not defined, and it stops right there.)
+Predicted Output: undefined
+Output: undefined
+
+
+2.
+var needle = 'haystack';
+test();
+function test(){
+	var needle = 'magnet';
+	console.log(needle);
+}
+
+(It goes to the function test, and there it creates the variable and sees what is going on in console.log, after this when the function test() is called it delivers the output of the function.)
+Predicted Output: 'magnet'
+Output: 'magnet'
+
+3.
+var brendan = 'super cool';
+function print(){
+	brendan = 'only okay';
+	console.log(brendan);
+}
+console.log(brendan);
+
+(Firstly it initializes the variable brendan, than the function. Because the function is not called, it outputs the global variable brendan that is outside the function.)
+Predicted Output: 'super cool'
+Output: 'super cool'
+
+4.
+var food = 'chicken';
+console.log(food);
+eat();
+function eat(){
+	food = 'half-chicken';
+	console.log(food);
+	var food = 'gone';
+}
+
+(First it outputs the global variable food, then goes to the function and after that when the function is valled it outputs what the function delivers.)
+Predicted Output: 'chicken'
+Output: 'half-chicken'
+
+5.
+mean();
+console.log(food);
+var mean = function() {
+	food = "chicken";
+	console.log(food);
+	var food = "fish";
+	console.log(food);
+}
+console.log(food);
+
+(It sees what is inside the console.log, when the variable there is not defined anywhere then it outputs error.)
+Predicted Output: "error"
+Output: "error"
+
+6.
+console.log(genre);
+var genre = "disco";
+rewind();
+function rewind() {
+	genre = "rock";
+	console.log(genre);
+	var genre = "r&b";
+	console.log(genre);
+}
+console.log(genre);
+
+(Since the variable insidel console.log is not defined before console.log it outputs undefined first, then it goes to the function and executes the output of the function.)
+Predicted Output: undefined, rock, r&b, disco
+Output: undefined, rock, r&b, disco
+
+7.
+dojo = "san jose";
+console.log(dojo);
+learn();
+function learn() {
+	dojo = "seattle";
+	console.log(dojo);
+	var dojo = "burbank";
+	console.log(dojo);
+}
+console.log(dojo);
+
+(First it outputs the global variable dojo, then goes to the function and gets the variables and outputs them, and finally outputs the variable dojo again.)
+Predicted Output: san jose, seattle, burbank, san jose
+Output: san jose, seattle, burbank, san jose
+
+8.
+Predicted Output: 
+Object[
+	hiring: true
+	name: "Chicago"
+	students: 65]
