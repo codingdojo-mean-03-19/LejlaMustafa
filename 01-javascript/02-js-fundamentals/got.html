@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Thrones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            info = document.getElementById('info');
+            $('#stark').click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/362", displayName);  
+            })
+            //Targaryen api doesn't work
+            $('#targaryen').click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/378", displayName);  
+            })
+            $('#lannister').click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/229", displayName);  
+            })
+            $('#baratheon').click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/16", displayName);  
+            })
+            function displayName(data){
+                $('#info').empty();
+                info.innerHTML = info.innerHTML + "<h1>" + "House Details" + "</h1>";
+                info.innerHTML = info.innerHTML+"<h1>Name :"+data['name']+"</h1>";
+                info.innerHTML = info.innerHTML+"<h1>Words :"+data['words']+"</h1>";
+                info.innerHTML = info.innerHTML+"<h3>" + "Titles :" + " </h3>";
+                for (var i=0;i<data['titles'].length;i++){
+                    info.innerHTML= info.innerHTML+ "<p>" + data['titles'][i]+ "</p>";
+                }
+                console.log(data);
+            }
+        })
+        
+    </script>
+    <style>
+        
+        .container{
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+        
+            <a href="#" id="stark"><img src = "assets/stark.jpg" style="width: 300px; height: 200px;"></a>
+            <a href="#" id="targaryen"><img src = "assets/targaryen.jpg" style="width: 300px; height: 200px;"></a>
+            <a href="#" id="lannister"><img src = "assets/lannister.jpg" style="width: 300px; height: 200px;"></a>
+            <a href="#" id="baratheon"><img src = "assets/baratheon.png" style="width: 300px; height: 200px;"></a>
+            <div id="info"></div>
+        
+    </div>  
+    </div>
+</body>
+</html>
