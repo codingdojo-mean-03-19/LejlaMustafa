@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Cats</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Details Page </h1>
+		<div class="infobox">
+			<img src="<%= cat[0].src %>">
+			<h3>Favorite food: <%= cat[0].food %></h3>
+			<h3>Age: <%= cat[0].age %></h3>
+			<h3>Sleeping spots:</h3>
+			<h4><%= cat[0].sleep1 %></h4>
+			<h4><%= cat[0].sleep2 %></h4>
+		</div>
+	</div>
+	
+</body>
+</html>
