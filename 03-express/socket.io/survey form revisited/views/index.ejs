@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Survey Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function (){
+                var socket = io.connect();
+                $('.btn').click(function (){
+                    socket.emit("posting_form",{
+                        name: $("#name").val(),
+                        location: $("#location").val(),
+                        language: $("#language").val(),
+                        comment: $("#comment").val()
+                    });
+                });
+                socket.on('updated_message', function (data){
+                    var object = JSON.stringify(data.info);
+                    $("#header").append("<p>"+data.response+object+"</p>")
+                });
+                socket.on('random_number', function(data){
+                    $("#header").append("<p>"+data.response+data.numb+".</p>");
+                });
+            });
+    </script>
+</head>
+<body>
+    <div id ="header"> </div>
+    <div class="container">
+        <div class="row">
+            <form action="/" method="POST" class="col-md-8">
+              
+                
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input id="name" name="name" type="text" class="form-control">
+                        
+                    </div>
+                    
+                        <div class="form-group">
+                            <label>Location</label>
+                            <select id ="location" name="location">
+                                <option value="" disabled selected>Dojo Location</option>
+                                <option>SILICON VALLEY</option>
+                                <option>SEATTLE</option>
+                                <option>LOS ANGELES</option>
+                                <option>DALLAS</option>
+                                <option>WASHINGTON DC</option>
+                                <option>CHICAGO</option>
+                                <option>ONLINE</option>
+                            </select>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Favorite Language</label>
+                            <select id = "language" name="language">
+                                <option value="" disabled selected>Choose your favorite language</option>
+                                <option>PYTHON</option>
+                                <option>MEAN</option>
+                                <option>RUBY ON RAILS</option>
+                                <option>IOS</option>
+                                <option>LAMP</option>
+                            </select>
+                            
+                        </div>
+                    
+                    
+                        <div class="form-group">
+                            <label for="comment">Comments</label>
+                            <textarea id="comment" class="form-control" name="comment"></textarea>
+                            
+                        </div>
+                   
+                    </form>
+
+                    
+                    
+                    
+                   
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="Submit">
+            
+        </div>
+
+   
+</body>
+</html>
