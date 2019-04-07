@@ -1,0 +1,25 @@
+.container{
+	text-align: center;
+}
+.btn-primary{
+	width: 300px; 
+	height: 100px; 
+	margin-bottom: 300px;
+	margin-left: 145px;
+	border-radius: 10px;
+}
+
+#parag{
+	margin-top: 100px;
+}
+
+#header{
+	margin-top: 20px;
+}
+.btn-danger {
+	vertical-align: bottom; 
+	float: right;
+	margin-top: 200px;
+    margin-left: 30px;
+
+}

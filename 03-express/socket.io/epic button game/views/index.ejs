@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Epic Button Game</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    	<script type="text/javascript">
+	        $(document).ready(function (){
+	            var socket = io.connect();
+	            $('.btn-primary').click(function (){
+	                socket.emit("button_click")
+	            });
+	           	$('.btn-danger').click(function (){
+	                socket.emit("reset")
+	            });
+	            socket.on('update_count', function(data){
+	                $("#count").html(data.count);
+	           	});
+	        });
+	  </script>
+	</head>
+	<body>
+		<div class="container">
+			<h1 id="header">The button has been pushed <span id="count">0</span> time(s)</h1>
+			<p id="parag">Push the button to update the count!</p>
+
+			<button type="submit" class="btn btn-primary">Push the epic button</button>
+			<button type="submit" class="btn btn-danger">Reset count </button>
+		</div>
+	</body>
+</html>
