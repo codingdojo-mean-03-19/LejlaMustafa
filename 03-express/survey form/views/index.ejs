@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Survey Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="/result" method="POST" class="col-md-8">
+              
+                
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input id="name" name="name" type="text" class="form-control">
+                        
+                    </div>
+                    
+                        <div class="form-group">
+                            <label>Location</label>
+                            <select name="location">
+                                <option value="" disabled selected>Dojo Location</option>
+                                <option>SILICON VALLEY</option>
+                                <option>SEATTLE</option>
+                                <option>LOS ANGELES</option>
+                                <option>DALLAS</option>
+                                <option>WASHINGTON DC</option>
+                                <option>CHICAGO</option>
+                                <option>ONLINE</option>
+                            </select>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Favorite Language</label>
+                            <select name="language">
+                                <option value="" disabled selected>Choose your favorite language</option>
+                                <option>PYTHON</option>
+                                <option>MEAN</option>
+                                <option>RUBY ON RAILS</option>
+                                <option>IOS</option>
+                                <option>LAMP</option>
+                            </select>
+                            
+                        </div>
+                    
+                    
+                        <div class="form-group">
+                            <label for="description">Comments</label>
+                            <textarea id="description" class="form-control" name="description"></textarea>
+                            
+                        </div>
+                   
+                    
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                   
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
