@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>SWAPI</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="/js/script.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <section id="main">
+                        <h1>STAR WARS WIKI</h1>
+                        <p>What would you like to know more about?</p>
+                        
+                            <button id="peopleBtn" class="btn btn-warning">People</button>
+                       
+                            <button id="planetBtn" class="btn btn-warning">Planets</button>
+                        
+                    </section>
+                    <div id="apiData" class="mt-2">
+                        <ul id="placeholder"></ul>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col d-flex justify-content-around">
+                    <button id="prev" class='btn btn-warning' hidden>Previous 10</button>
+                    <button id="all" class='btn btn-warning' hidden>Get all</button>
+                    <button id="next" class='btn btn-warning' hidden>Next 10</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

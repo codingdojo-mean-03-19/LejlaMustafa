@@ -1,0 +1,56 @@
+body {
+    
+    background-color: black;
+}
+
+.container {
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    color: #ffc107;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: black;
+    opacity: .90;
+}
+
+section, form {
+    width: auto;
+}
+
+section, form, #content {
+    text-align:center;
+}
+
+img.title {
+    width: 25%;
+}
+
+h1, h2, h3, h4, h5, p, li {
+    text-align: center;
+    color: white;
+}
+
+#peopleBtn, #planetButton, form {
+    display: inline-block;
+}
+
+#apiData {
+    max-height: 250px;
+    height: 250px;
+    border: 1px solid #ffc107;
+    /* column-count: 5; */
+    overflow: auto;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#placeholder li {
+    list-style-type: none;
+    font-size: 1em;
+}
+
+.col.red, .col.error {
+    color: red;
+    font-weight: bold;
+}
+
